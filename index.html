@@ -86,7 +86,7 @@
           color="white" 
           width="250" 
           rotation="-90 0 0 "
-          position="-100 0 -50"
+          position="-125 0 -50"
         ></a-text>`
     </a-nft>
 
@@ -103,7 +103,7 @@
       <a-entity
         class="zombie"
         position="0 0 -100"
-        scale="50 50 50"
+        scale="25 25 25"
         rotation="90 -180 0"
         gltf-model="./models/zombie.gltf"
         visible="false"
@@ -115,11 +115,19 @@
           color="white" 
           width="250" 
           rotation="-90 0 0 "
-          position="-100 0 -50"
+          position="-125 0 -50"
         ></a-text>`
     </a-nft>
 
-    <a-entity camera></a-entity>
+    <a-entity camera>
+      <a-text
+        id="start" 
+        value="Scan a the grass to start the story..."
+        position="0 0 -2"
+        color="yellow"
+        width="50"
+      ></a-text>
+    </a-entity>
   </a-scene>
 
   <script>
@@ -129,6 +137,7 @@
     document.querySelector("#marker1").addEventListener("markerFound", () => {
       scanned1 = true;
       document.querySelector(".house").setAttribute("visible", true);
+      document.querySelector("#start").setAttribute("visible", false);
     });
 
     document.querySelector("#marker2").addEventListener("markerFound", () => {
