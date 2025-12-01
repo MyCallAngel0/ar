@@ -81,12 +81,13 @@
       ></a-entity>
 
       <a-text
-          class="herobrine"
+          id="herobrine_text"
           value="Inside your house stands Herobrine! Your instincts tell you to fight back. Something unfortunate happened. Your game crashed. When you tried to enter back in the game, the LOGO was in black and white" 
           color="white" 
           width="250" 
           rotation="-90 0 0 "
           position="-125 0 -50"
+          visible="false"
         ></a-text>`
     </a-nft>
 
@@ -112,7 +113,7 @@
       <a-text
           id="zombie_text"
           value="After entering your world you saw yourself as a zombie. You lost the battle against Herobrine and he made you a zombie. Now you have to search for other players to infect. The end!" 
-          color="white" 
+          color="red" 
           width="200" 
           rotation="-90 0 0 "
           position="-100 0 -75"
@@ -121,13 +122,13 @@
     </a-nft>
 
     <a-entity camera>
-      <!-- <a-text
+      <a-text
         id="start" 
         value="Scan a the grass to start the story..."
-        position="0 0 0"
+        position="0 0 100"
         color="yellow"
         width="50"
-      ></a-text> -->
+      ></a-text>
     </a-entity>
   </a-scene>
 
@@ -145,6 +146,7 @@
       if (scanned1) {
         scanned2 = true;
         document.querySelector(".herobrine").setAttribute("visible", true);
+        document.querySelector("#herobrine_text").setAttribute("visible", true);
       }
     });
 
