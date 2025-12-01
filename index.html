@@ -57,7 +57,7 @@
           color="white" 
           width="300" 
           rotation="-90 0 0 "
-          position="-200 0 -50"
+          position="-150 0 -75"
         ></a-text>`
     </a-nft>
 
@@ -84,9 +84,9 @@
           class="herobrine"
           value="Inside your house stands Herobrine! Your instincts tell you to fight back. Something unfortunate happened. Your game crashed. When you tried to enter back in the game, the LOGO was in black and white" 
           color="white" 
-          width="300" 
+          width="250" 
           rotation="-90 0 0 "
-          position="-200 50 0"
+          position="-100 50 0"
           visible="false"
         ></a-text>`
     </a-nft>
@@ -116,7 +116,7 @@
           color="white" 
           width="250" 
           rotation="-90 0 0 "
-          position="-150 0 0"
+          position="-100 0 0"
           visible="false"
         ></a-text>`
     </a-nft>
@@ -125,8 +125,8 @@
   </a-scene>
 
   <script>
-    let scanned1 = false;
-    let scanned2 = false;
+    let scanned1 = true;
+    let scanned2 = true;
 
     document.querySelector("#marker1").addEventListener("markerFound", () => {
       scanned1 = true;
