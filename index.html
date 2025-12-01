@@ -44,19 +44,20 @@
       smoothThreshold="5"
     >
       <a-entity
-        id="house"
+        class="house"
         position="0 0 -150"
         scale="200 200 200"
         rotation="-90 0 0"
         gltf-model="./models/house_minecraft.glb"
       ></a-entity>
 
-      <a-text 
+      <a-text
+          class="house"
           value="After a long day of mining you go home. You were so tired you could just drop on the FLOOR as soon as you enter" 
           color="white" 
           width="300" 
           rotation="-90 0 0 "
-          position="-200 0 0"
+          position="-200 0 -50"
         ></a-text>`
     </a-nft>
 
@@ -71,20 +72,22 @@
       smoothThreshold="5"
     >
       <a-entity
-        id="herobrine"
-        position="0 0 50"
+        class="herobrine"
+        position="0 0 -50"
         scale="50 50 50"
         rotation="90 -180 0"
         gltf-model="./models/herobrine.gltf"
         visible="false"
       ></a-entity>
 
-      <a-text 
+      <a-text
+          class="herobrine"
           value="Inside your house stands Herobrine! Your instincts tell you to fight back. Something unfortunate happened. Your game crashed. When you tried to enter back in the game, the LOGO was in black and white" 
           color="white" 
           width="300" 
           rotation="-90 0 0 "
           position="-200 50 0"
+          visible="false"
         ></a-text>`
     </a-nft>
 
@@ -99,20 +102,22 @@
       smoothThreshold="5"
     >
       <a-entity
-        id="zombie"
-        position="0 0 0"
+        class="zombie"
+        position="0 0 -50"
         scale="50 50 50"
         rotation="90 -180 0"
         gltf-model="./models/zombie.gltf"
         visible="false"
       ></a-entity>
 
-      <a-text 
+      <a-text
+          class="zombie"
           value="After entering your world you saw yourself as a zombie. You lost the battle against Herobrine and he made you a zombie. Now you have to search for other players to infect. The end!" 
           color="white" 
-          width="300" 
+          width="250" 
           rotation="-90 0 0 "
-          position="-200 0 0"
+          position="-150 0 0"
+          visible="false"
         ></a-text>`
     </a-nft>
 
@@ -125,19 +130,19 @@
 
     document.querySelector("#marker1").addEventListener("markerFound", () => {
       scanned1 = true;
-      document.querySelector("#house").setAttribute("visible", true);
+      document.querySelector(".house").setAttribute("visible", true);
     });
 
     document.querySelector("#marker2").addEventListener("markerFound", () => {
       if (scanned1) {
         scanned2 = true;
-        document.querySelector("#herobrine").setAttribute("visible", true);
+        document.querySelector(".herobrine").setAttribute("visible", true);
       }
     });
 
     document.querySelector("#marker3").addEventListener("markerFound", () => {
       if (scanned2) {
-        document.querySelector("#zombie").setAttribute("visible", true);
+        document.querySelector(".zombie").setAttribute("visible", true);
       }
     });
     
