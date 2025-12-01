@@ -86,7 +86,7 @@
           color="white" 
           width="300" 
           rotation="-90 0 0 "
-          position="-150 0 0"
+          position="-150 0 -75"
           visible="false"
         ></a-text>`
     </a-nft>
@@ -114,9 +114,9 @@
           class="zombie"
           value="After entering your world you saw yourself as a zombie. You lost the battle against Herobrine and he made you a zombie. Now you have to search for other players to infect. The end!" 
           color="white" 
-          width="250" 
+          width="300" 
           rotation="-90 0 0 "
-          position="-150 0 0"
+          position="-150 0 -75"
           visible="false"
         ></a-text>`
     </a-nft>
@@ -125,8 +125,8 @@
   </a-scene>
 
   <script>
-    let scanned1 = true;
-    let scanned2 = true;
+    let scanned1 = false;
+    let scanned2 = false;
 
     document.querySelector("#marker1").addEventListener("markerFound", () => {
       scanned1 = true;
