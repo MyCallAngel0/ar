@@ -45,7 +45,7 @@
     >
       <a-entity
         id="house"
-        position="500 0 0"
+        position="200 0 0"
         scale="200 200 200"
         rotation="-90 0 0"
         gltf-model="./models/house_minecraft.glb"
@@ -72,7 +72,7 @@
     >
       <a-entity
         id="herobrine"
-        position="200 0 0"
+        position="100 0 0"
         scale="50 50 50"
         rotation="90 -180 0"
         gltf-model="./models/herobrine.gltf"
@@ -84,7 +84,35 @@
           color="white" 
           width="300" 
           rotation="-90 0 0 "
-          position="-200 100 -30"
+          position="-200 100 0"
+        ></a-text>`
+    </a-nft>
+
+    <!-- 3 - Zombie -->
+    <a-nft
+      id="marker3"
+      type="nft"
+      url="https://raw.githubusercontent.com/MyCallAngel0/ar/master/nft/meinkraft/meinkraft"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity
+        id="zombie"
+        position="200 0 0"
+        scale="50 50 50"
+        rotation="90 -180 0"
+        gltf-model="./models/zombie.gltf"
+        visible="false"
+      ></a-entity>
+
+      <a-text 
+          value="After entering your world you saw yourself as a zombie. You lost the battle against Herobrine and he made you a zombie. Now you have to search for other players to infect. The end!" 
+          color="white" 
+          width="300" 
+          rotation="-90 0 0 "
+          position="-200 100 0"
         ></a-text>`
     </a-nft>
 
@@ -95,17 +123,21 @@
     let scanned1 = false;
     let scanned2 = false;
 
-    // Unlock Mars when Sun scanned
     document.querySelector("#marker1").addEventListener("markerFound", () => {
       scanned1 = true;
       document.querySelector("#house").setAttribute("visible", true);
     });
 
-    // Unlock Moon when Sun & Mars scanned
     document.querySelector("#marker2").addEventListener("markerFound", () => {
       if (scanned1) {
         scanned2 = true;
         document.querySelector("#herobrine").setAttribute("visible", true);
+      }
+    });
+
+    document.querySelector("#marker3").addEventListener("markerFound", () => {
+      if (scanned2) {
+        document.querySelector("#zombie").setAttribute("visible", true);
       }
     });
     
